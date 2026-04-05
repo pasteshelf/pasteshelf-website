@@ -1,35 +1,33 @@
-<p align="center">
-  <img src="public/icon.png" width="128" alt="PasteShelf Icon">
-</p>
+# PasteShelf Website
 
-<h1 align="center">PasteShelf Website</h1>
+The official website for [PasteShelf](https://github.com/pasteshelf/PasteShelf) — a privacy-first clipboard manager for macOS.
 
-<p align="center">
-  <strong>Official website for <a href="https://github.com/pasteshelf/PasteShelf">PasteShelf</a> — Privacy-first clipboard manager for macOS.</strong>
-</p>
+**Live:** [pasteshelf.app](https://pasteshelf.app)
 
----
+## Stack
 
-## Tech Stack
-
-- [Astro](https://astro.build/) — Static site generator
-- [Tailwind CSS v4](https://tailwindcss.com/) — Utility-first CSS
-- Static output, no JavaScript frameworks
+- [Astro 5](https://astro.build/) + [Starlight](https://starlight.astro.build/) for documentation
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- Static site hosted on a VPS with Nginx
 
 ## Development
 
 ```bash
+# Requires Node 22+
 npm install
 npm run dev
 ```
+
+Open [localhost:4321](http://localhost:4321).
 
 ## Build
 
 ```bash
 npm run build
-npm run preview
 ```
+
+Output goes to `dist/`.
 
 ## License
 
-MIT
+AGPL-3.0 — see [LICENSE](https://github.com/pasteshelf/PasteShelf/blob/main/LICENSE).
