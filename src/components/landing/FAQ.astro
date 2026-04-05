@@ -1,0 +1,61 @@
+---
+const faqs = [
+  {
+    question: 'What is PasteShelf?',
+    answer: 'PasteShelf is a privacy-first clipboard manager for macOS. It captures everything you copy — text, images, files, URLs, code — and stores it locally on your Mac for easy retrieval.',
+  },
+  {
+    question: 'Is PasteShelf free?',
+    answer: 'Yes, PasteShelf is completely free and open-source under the AGPL-3.0 license. All features are included — no premium tiers, no subscriptions, no in-app purchases.',
+  },
+  {
+    question: 'Does PasteShelf send my clipboard data to the cloud?',
+    answer: 'No. All clipboard data is stored locally on your Mac by default. PasteShelf has zero telemetry, zero analytics, and makes zero network requests. Optional iCloud sync is available but fully end-to-end encrypted.',
+  },
+  {
+    question: 'What are the system requirements?',
+    answer: 'PasteShelf requires macOS 14.0 (Sonoma) or later. It runs natively on both Apple Silicon and Intel Macs.',
+  },
+  {
+    question: 'How does PasteShelf handle sensitive data?',
+    answer: 'PasteShelf includes automatic sensitive data detection and lets you exclude specific apps (like password managers) from clipboard monitoring. You can also set auto-expiry for clipboard items.',
+  },
+  {
+    question: 'Can I sync clipboard across multiple Macs?',
+    answer: 'Yes, PasteShelf offers optional iCloud sync with end-to-end encryption. Your clipboard data is encrypted before it ever leaves your Mac, so even Apple cannot read it.',
+  },
+  {
+    question: 'How do I access my clipboard history?',
+    answer: 'Press ⌘⇧V (or your custom hotkey) anywhere on your Mac to open PasteShelf. You can browse, search, and paste any item from your history. PasteShelf also lives in your menu bar.',
+  },
+  {
+    question: 'Does PasteShelf support images and files?',
+    answer: 'Yes. PasteShelf captures and displays rich previews of images, files, URLs, and code snippets — not just plain text. You can even search text within images using OCR.',
+  },
+];
+---
+
+<section id="faq" class="pt-16 pb-20 md:pt-20 md:pb-28 bg-slate-50">
+  <div class="max-w-3xl mx-auto px-6">
+    <div data-animate class="text-center mb-16">
+      <span class="inline-block text-sm font-semibold text-coral-500 uppercase tracking-wider mb-3">FAQ</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Frequently asked questions</h2>
+    </div>
+
+    <div data-animate class="space-y-3">
+      {faqs.map((faq) => (
+        <details class="group bg-white rounded-xl border border-slate-100 overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none text-left">
+            <span class="text-base font-medium text-slate-900 pr-4">{faq.question}</span>
+            <svg class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-slate-500 leading-relaxed">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

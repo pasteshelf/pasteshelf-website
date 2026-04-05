@@ -1,0 +1,109 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'PasteShelf — Privacy-First Clipboard Manager for macOS',
+  description = 'PasteShelf is a privacy-first clipboard manager for macOS. Your clipboard history, stored locally. No cloud, no tracking, just productivity.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth" style="scroll-padding-top: 5rem;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f5624d" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-white text-slate-800 font-sans antialiased">
+    <slot />
+
+    <script>
+      // Scroll-triggered animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+      );
+
+      document.querySelectorAll('[data-animate], [data-animate-stagger]').forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      menuBtn?.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu?.classList.toggle('hidden');
+      });
+
+      // Close mobile menu on link click
+      mobileMenu?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuBtn?.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+    </script>
+
+    <script is:inline>
+      // GitHub Releases download handler — inline to ensure DOM is available
+      (function() {
+        var RELEASES_API = 'https://api.github.com/repos/pasteshelf/PasteShelf/releases/latest';
+        var FALLBACK = 'https://github.com/pasteshelf/PasteShelf/releases';
+
+        function handleDownload(e) {
+          e.preventDefault();
+          fetch(RELEASES_API)
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+              var dmg = data.assets && data.assets.find(function(a) { return a.name.endsWith('.dmg'); });
+              window.location.href = dmg ? dmg.browser_download_url : FALLBACK;
+            })
+            .catch(function() { window.location.href = FALLBACK; });
+        }
+
+        document.querySelectorAll('[data-download-dmg]').forEach(function(el) {
+          el.addEventListener('click', handleDownload);
+        });
+      })();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

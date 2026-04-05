@@ -1,0 +1,94 @@
+<section id="download" class="pt-16 pb-20 md:pt-20 md:pb-28 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div data-animate class="text-center mb-16">
+      <span class="inline-block text-sm font-semibold text-coral-500 uppercase tracking-wider mb-3">Download</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Get PasteShelf</h2>
+      <p class="mt-4 text-lg text-slate-500">Free and open-source. Requires macOS 14.0 or later.</p>
+    </div>
+
+    <div data-animate-stagger class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Homebrew -->
+      <div class="relative p-6 rounded-2xl border border-coral-200 bg-coral-50/40 ring-1 ring-coral-200 transition-all hover:shadow-lg">
+        <span class="absolute -top-3 left-6 inline-block px-3 py-1 text-xs font-semibold text-white bg-coral-500 rounded-full">Recommended</span>
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-coral-100 text-coral-600 mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Homebrew</h3>
+        <p class="text-sm text-slate-500 mb-4">Install via Homebrew for easy updates.</p>
+        <div class="flex items-center gap-2 bg-slate-900 text-slate-300 px-4 py-2.5 rounded-lg text-xs font-mono">
+          <code class="flex-1 truncate">brew install --cask pasteshelf</code>
+          <button
+            class="copy-btn text-slate-500 hover:text-white transition-colors shrink-0"
+            data-copy="brew install --cask pasteshelf"
+            aria-label="Copy command"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Direct Download -->
+      <div class="p-6 rounded-2xl border border-slate-150 bg-white transition-all hover:shadow-lg">
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Direct Download</h3>
+        <p class="text-sm text-slate-500 mb-4">Download the latest DMG from GitHub Releases.</p>
+        <a
+          href="https://github.com/pasteshelf/PasteShelf/releases/latest"
+          data-download-dmg
+          class="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors"
+        >
+          Download DMG
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Build from Source -->
+      <div class="p-6 rounded-2xl border border-slate-150 bg-white transition-all hover:shadow-lg">
+        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Build from Source</h3>
+        <p class="text-sm text-slate-500 mb-4">Clone the repo and build with Xcode.</p>
+        <div class="flex items-center gap-2 bg-slate-900 text-slate-300 px-4 py-2.5 rounded-lg text-xs font-mono">
+          <code class="flex-1 truncate">git clone https://github.com/pasteshelf/PasteShelf.git</code>
+          <button
+            class="copy-btn text-slate-500 hover:text-white transition-colors shrink-0"
+            data-copy="git clone https://github.com/pasteshelf/PasteShelf.git"
+            aria-label="Copy command"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        if (!text) return;
+        navigator.clipboard.writeText(text);
+        const svgEl = btn.querySelector('svg');
+        if (svgEl) {
+          svgEl.style.color = '#4ade80';
+          setTimeout(() => { svgEl.style.color = ''; }, 2000);
+        }
+      });
+    });
+  </script>
+</section>

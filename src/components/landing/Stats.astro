@@ -1,0 +1,22 @@
+---
+const stats = [
+  { value: '100%', label: 'Open Source' },
+  { value: '0', label: 'Cloud Requests' },
+  { value: '∞', label: 'Clipboard History' },
+  { value: '⌘⇧V', label: 'Global Hotkey' },
+  { value: 'macOS 14+', label: 'Native App' },
+];
+---
+
+<section class="py-14 bg-white border-y border-slate-100">
+  <div class="max-w-6xl mx-auto px-6">
+    <div data-animate-stagger class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+      {stats.map((stat) => (
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-coral-500">{stat.value}</div>
+          <div class="mt-1 text-sm text-slate-500">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
