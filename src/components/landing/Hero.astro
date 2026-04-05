@@ -52,7 +52,7 @@
     <!-- Brew install -->
     <div data-animate class="mt-10 inline-flex items-center gap-3 bg-slate-900 text-slate-300 px-5 py-3 rounded-xl text-sm font-mono">
       <span class="text-slate-500">$</span>
-      <code>brew install --cask pasteshelf</code>
+      <code>brew install --cask pasteshelf/pasteshelf/pasteshelf</code>
       <button
         id="copy-brew"
         class="text-slate-500 hover:text-white transition-colors"
@@ -67,7 +67,7 @@
 
   <script>
     document.getElementById('copy-brew')?.addEventListener('click', function() {
-      navigator.clipboard.writeText('brew install --cask pasteshelf');
+      navigator.clipboard.writeText('brew install --cask pasteshelf/pasteshelf/pasteshelf');
       const btn = document.getElementById('copy-brew');
       if (btn) {
         const svg = btn.querySelector('svg');

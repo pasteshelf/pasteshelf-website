@@ -1,6 +1,33 @@
 @import 'tailwindcss';
+@import '@astrojs/starlight-tailwind';
 
 @theme {
+  /* Starlight accent (coral) */
+  --color-accent-50: #fef2f0;
+  --color-accent-100: #fde3de;
+  --color-accent-200: #fcc7bd;
+  --color-accent-300: #f9a08f;
+  --color-accent-400: #f5724d;
+  --color-accent-500: #f5624d;
+  --color-accent-600: #e04832;
+  --color-accent-700: #bc3724;
+  --color-accent-800: #9b3122;
+  --color-accent-900: #812e22;
+  --color-accent-950: #46140d;
+
+  /* Starlight gray */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+
   /* PasteShelf Coral Brand Palette */
   --color-coral-50: #fef2f0;
   --color-coral-100: #fde3de;
