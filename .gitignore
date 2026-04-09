@@ -17,6 +17,11 @@ pnpm-debug.log*
 .env
 .env.production
 
+# Secrets - NEVER COMMIT
+*.key
+*.pem
+*.p12
+
 # macOS-specific files
 .DS_Store
 
